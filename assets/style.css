@@ -1,0 +1,316 @@
+/* Шрифт */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+/* Плавна прокрутка */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header (фіксований) */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1e1e1e;
+    padding: 16px 20px 6px;
+    text-align: center;
+    z-index: 10000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid #333;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+}
+
+.subtitle {
+    color: #bbb;
+    margin-top: 5px;
+}
+
+/* Відступ для контенту після фіксованого хедера */
+main {
+    max-width: 800px;
+    margin: 200px auto 40px;
+    padding: 0 20px;
+}
+
+
+/* Алфавіт */
+.alphabet {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 0;
+    margin-top: 0;
+    background-color: #121212;
+    position: sticky;
+    top: 100px;
+    z-index: 500;
+}
+
+.alphabet a {
+    text-decoration: none;
+    color: #ccc;
+    font-weight: 600;
+    padding: 8px 14px; /* Збільшено відступи для кращого вигляду */
+    border: 1px solid #444;
+    border-radius: 6px;
+    background-color: #1e1e1e;
+    transition: 0.3s ease-in-out transform, 0.3s ease-in-out box-shadow, 0.3s ease-in-out background-color;
+    font-size: 1.3rem; /* Збільшено розмір шрифта */
+}
+
+.alphabet a:hover {
+    background-color: #3f8cff33;
+    color: #fff;
+    transform: translateY(-5px); /* Підйом на 5px */
+    box-shadow: 0 8px 20px rgba(63, 140, 255, 0.3);
+}
+
+.alphabet a.active {
+    background-color: #3f8cff;
+    color: #fff;
+    border-color: #3f8cff;
+    box-shadow: 0 8px 20px rgba(63, 140, 255, 0.4);
+    transform: translateY(-5px); /* Підйом на 5px */
+}
+
+/* Секції */
+
+section {
+    scroll-margin-top: 140px;
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+section h2 {
+    font-size: 1.8rem;
+    border-bottom: 1px solid #444;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+/* Слова та переклади */
+.definition {
+    background-color: #1e1e1e;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
+    margin-bottom: 20px;
+}
+
+.definition h3 {
+    color: #3f8cff;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.definition ul {
+    padding-left: 20px;
+}
+
+.definition li {
+    line-height: 1.6;
+}
+
+.definition p {
+    color: #aaa;
+}
+.word-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #1e1e1e;
+    border: 1px solid #3f3f3f;
+    border-radius: 10px;
+    padding: 16px;
+    transition: 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 20px rgba(63, 140, 255, 0.3);
+    transform: translateY(-4px);
+}
+
+.word-title {
+    font-size: 1.2rem;
+    color: #3f8cff;
+    margin-bottom: 10px;
+}
+
+.translation-list {
+    padding-left: 18px;
+    margin: 0;
+    color: #ddd;
+}
+
+.translation-item {
+    margin-bottom: 5px;
+}
+
+.no-translation {
+    font-style: italic;
+    color: #999;
+}
+.dictionary-switcher {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dictionary-switcher a {
+    padding: 0.4em 0.8em;
+    background: #f0f0f0;
+    color: #333;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.dictionary-switcher a:hover {
+    background: #ddd;
+}
+
+.dictionary-switcher a.active {
+    background: #007acc;
+    color: white;
+}
+.dictionary-stack {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.dictionary-stack a {
+    padding: 0.6em 1em;
+    background: #f1f1f1;
+    color: #333;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dictionary-stack a:hover {
+    background: #e0e0e0;
+}
+
+.dictionary-stack a.active {
+    background: #007acc;
+    color: white;
+    font-weight: bold;
+}
+
+.auth-buttons {
+    margin-top: 1rem;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.auth-buttons .btn {
+    padding: 0.5em 1em;
+    background: #3f8cff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.auth-buttons .btn:hover {
+    background: #007acc;
+}
+.auth-controls {
+    position: absolute;
+    top: 16px;
+    right: 50px;
+    display: flex;
+    gap: 10px;
+}
+
+.auth-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #292929;
+    padding: 8px 14px;
+    border-radius: 6px;
+    color: #f1f1f1;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #444;
+}
+
+.auth-btn i {
+    font-size: 1rem;
+}
+
+.auth-btn:hover {
+    background-color: #3f8cff;
+    color: black;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(63, 140, 255, 0.3);
+}
+.fa-heart {
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.fa-heart.saved {
+    color: red;
+    transform: scale(1.2);
+}
+.search-form {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    max-width: 300px;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+
+.search-form input {
+    flex: 1;
+    padding: 8px 12px;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+
+.search-form button {
+    background: none;
+    border: none;
+    padding: 8px 12px;
+    color: #555;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #f0f0f0;
+}
